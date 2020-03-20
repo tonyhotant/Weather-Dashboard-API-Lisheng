@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./Develop/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="Develop/script.js"></script>
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Weather Dashboard</h1>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4" id="sidebar">
+                <div class="row">
+                    <h4>Search for a City:</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="" aria-label=""
+                            aria-describedby="basic-addon1">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="button">
+                                search </button> </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="list-group">
+                        <button type="button" class="list-group-item list-group-item-action">Austin</button>
+                        <button type="button" class="list-group-item list-group-item-action">Chicago</button>
+                        <button type="button" class="list-group-item list-group-item-action">New York</button>
+                        <button type="button" class="list-group-item list-group-item-action">Orlando</button>
+                        <button type="button" class="list-group-item list-group-item-action">San Francisco</button>
+                        <button type="button" class="list-group-item list-group-item-action">Seattle</button>
+                        <button type="button" class="list-group-item list-group-item-action">Denver</button>
+                        <button type="button" class="list-group-item list-group-item-action">Atlanta</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h2 class="display-3">Fluid jumbotron</h2>
+                            <p class="lead">This is a modified jumbotron that occupies
+                                the entire horizontal space of its parent.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <h4>5-Day Forecast:</h4>
+                </div>
+                <div class="row">
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">date</h4>
+                                <p class="card-text">temp and humidity</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">date</h4>
+                                <p class="card-text">temp and humidity</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">date</h4>
+                                <p class="card-text">temp and humidity</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">date</h4>
+                                <p class="card-text">temp and humidity/p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">date</h4>
+                                <p class="card-text">temp and humidity</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

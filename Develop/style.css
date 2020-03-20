@@ -1,0 +1,22 @@
+nav {
+    background-color: rgb(65, 65, 65);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
+#sidebar {
+    background-color: rgb(247, 245, 245);
+}
+
+.btn {
+    margin-right: 80px;
+    margin-bottom: 20px;
+}
+
+.list-group {
+    width: 95%;
+}
