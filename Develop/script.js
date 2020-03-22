@@ -82,9 +82,23 @@ $(document).ready(function() {
         $("#rh").text(response.main.humidity);
         $("#ws").text(response.wind.speed);
 
-        //add 5-day forecast here
 
       });
+
+      var forecastURL =
+        "https://api.openweathermap.org/data/2.5/forecast?q=" +
+        city +
+        "&appid=" +
+        apiKey;
+      $.ajax({
+          url:forecastURL,
+          method: "GET"
+      }).then(function(response) {
+        //to be continue
+
+      });
+
+
     }
 
 

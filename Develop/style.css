@@ -8,8 +8,14 @@ h1 {
     margin: auto;
 }
 
+#main-content {
+    width: 110%;
+    margin-left: -100px;
+}
+
 #sidebar {
     background-color: rgb(247, 245, 245);
+    padding-left: 2%;
 }
 
 #search-bar {
@@ -17,7 +23,7 @@ h1 {
 }
 
 #search-btn {
-    background-color: rgb(42, 100, 207);
+    background-color: rgb(104, 150, 236);
 }
 
 .btn {
@@ -33,6 +39,21 @@ h1 {
     margin-top: 20px;
 }
 
+#main-display {
+    width: 115%;
+}
+
 #forecast {
     margin-top: 20px;
+    width: 115%;
+}
+
+.forecast-card {
+    color: white;
+    background-color: rgb(104, 150, 236);
+    width: 160px;
+}
+
+.cardDt {
+    font-size: larger;
 }
