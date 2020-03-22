@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./Develop/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -25,11 +26,11 @@
                 <div class="row" id="search-bar">
                     <h4>Search for a City:</h4>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="" aria-label=""
-                            aria-describedby="basic-addon1">
+                        <input id="user-input" type="text" class="form-control" placeholder="Enter a city name"
+                            aria-label="" aria-describedby="basic-addon1">
                         <div class="input-group-append">
                             <button id="search-btn" class="btn btn-success" type="button">
-                                search </button> </div>
+                                <i class="fa fa-search"></i></button> </div>
                     </div>
                 </div>
                 <div class="row">
@@ -49,10 +50,13 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h2 id="city">Atlanta(8/15/2019)</h2>
-                        <p>Temperature: <span id="temp"></span></p>
-                        <P>Humidity: <span id="rh"></span></p>
-                        <p>Wind Speed: <span id="ws"></span></p>
+                        <h2>
+                            <span id="city">Atlanta(8/15/2019)</span>
+                            <img id="icon" src="http://openweathermap.org/img/w/03d.png" alt="Weather icon">
+                        </h2>
+                        <p>Temperature: <span id="temp">90.9</span>°F</p>
+                        <P>Humidity: <span id="rh">41</span> %</p>
+                        <p>Wind Speed: <span id="ws">4.7</span>MPH</p>
                         <p>UV Index: <span id="uv"></span></p>
                     </div>
                 </div>
