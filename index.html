@@ -28,7 +28,7 @@
                         <input type="text" class="form-control" placeholder="" aria-label=""
                             aria-describedby="basic-addon1">
                         <div class="input-group-append">
-                            <button class="btn btn-success" type="button">
+                            <button id="search-btn" class="btn btn-success" type="button">
                                 search </button> </div>
                     </div>
                 </div>
@@ -46,53 +46,60 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="row">
-                    <div class="jumbotron jumbotron-fluid">
-                        <div class="container">
-                            <h2 class="display-3">Fluid jumbotron</h2>
-                            <p class="lead">This is a modified jumbotron that occupies
-                                the entire horizontal space of its parent.</p>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="row">
-                    <h4>5-Day Forecast:</h4>
-                </div>
-                <div class="row">
-                    <div class="card-deck">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">date</h4>
-                                <p class="card-text">temp and humidity</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">date</h4>
-                                <p class="card-text">temp and humidity</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">date</h4>
-                                <p class="card-text">temp and humidity</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">date</h4>
-                                <p class="card-text">temp and humidity/p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">date</h4>
-                                <p class="card-text">temp and humidity</p>
-                            </div>
-                        </div>
+                <div class="card">
+                    <div class="card-body" id="weather-now">
+                        <h2 id="city">Atlanta(8/15/2019)</h2>
+                        <p>Temperature: <span id="temp"></span></p>
+                        <P>Humidity: <span id="rh"></span></p>
+                        <p>Wind Speed: <span id="ws"></span></p>
+                        <p>UV Index: <span id="UV"></span></p>
                     </div>
+                </div>
 
+                <div class="container">
+                    <h3>5-Day Forecast:</h3>
+                    <div class="row">
+
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Date</h4>
+                                    <p class="card-text">Temp: </p>
+                                    <p class="card-text">Humidity: </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Date</h4>
+                                    <p class="card-text">Temp: </p>
+                                    <p class="card-text">Humidity: </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Date</h4>
+                                    <p class="card-text">Temp: </p>
+                                    <p class="card-text">Humidity: </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Date</h4>
+                                    <p class="card-text">Temp: </p>
+                                    <p class="card-text">Humidity: </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Date</h4>
+                                    <p class="card-text">Temp: </p>
+                                    <p class="card-text">Humidity: </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
