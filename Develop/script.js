@@ -2,7 +2,7 @@ $(document).ready(function() {
     $("#search-btn").on("click", function (event) {
         event.preventDefault();
 
-        var location
+        var locations = ["Austin", "Chicago", "New York", "Orlando", "San Francisco", "Seattle", "Denver", "Atlanta"];
 
         var apiKey = "b9cd52a37f4e83dc74f86603a4adc81a";
 

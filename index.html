@@ -22,7 +22,7 @@
     <main class="container">
         <div class="row">
             <div class="col-md-4" id="sidebar">
-                <div class="row">
+                <div class="row" id="search-bar">
                     <h4>Search for a City:</h4>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="" aria-label=""
@@ -32,7 +32,7 @@
                                 search </button> </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="button-view">
                     <div class="list-group">
                         <button type="button" class="list-group-item list-group-item-action">Austin</button>
                         <button type="button" class="list-group-item list-group-item-action">Chicago</button>
@@ -45,10 +45,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8" id="weather-now">
 
                 <div class="card">
-                    <div class="card-body" id="weather-now">
+                    <div class="card-body">
                         <h2 id="city">Atlanta(8/15/2019)</h2>
                         <p>Temperature: <span id="temp"></span></p>
                         <P>Humidity: <span id="rh"></span></p>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
 
-                <div class="container">
+                <div class="container" id="forecast">
                     <h3>5-Day Forecast:</h3>
                     <div class="row">
 

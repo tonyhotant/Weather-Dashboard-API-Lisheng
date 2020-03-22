@@ -12,6 +12,10 @@ h1 {
     background-color: rgb(247, 245, 245);
 }
 
+#search-bar {
+    margin-top: 10px;
+}
+
 .btn {
     margin-right: 80px;
     margin-bottom: 20px;
@@ -19,4 +23,12 @@ h1 {
 
 .list-group {
     width: 95%;
+}
+
+#weather-now {
+    margin-top: 20px;
+}
+
+#forecast {
+    margin-top: 20px;
 }
