@@ -3,28 +3,32 @@ $(document).ready(function() {
 
   var date = moment().format("L");
 
-  var locations = [];
+  var locations = [
+    "Austin",
+    "Chicago",
+    "New York",
+    "Orlando",
+    "San Francisco",
+    "Seattle",
+    "Denver",
+    "Atlanta"
+  ];
 
   init();
 
   function init() {
     var history = JSON.parse(localStorage.getItem("history"));
+
     if (history == null) {
-      var history = [
-        "Austin",
-        "Chicago",
-        "New York",
-        "Orlando",
-        "San Francisco",
-        "Seattle",
-        "Denver",
-        "Atlanta"
-      ];
-    }
-    var locations = history;
-    localStorage.setItem("history", JSON.stringify(locations));
-    for (i = 0; i < locations.length; i++) {
-      $("#city-" + i).text(locations[i]);
+      localStorage.setItem("history", JSON.stringify(locations));
+      for (i = 0; i < locations.length; i++) {
+        $("#city-" + i).text(locations[i]);
+      }
+    } else {
+      locations = history;
+      for (i = 0; i < locations.length; i++) {
+        $("#city-" + i).text(locations[i]);
+      }
     }
 
     displayData(locations[0]);
@@ -52,8 +56,6 @@ $(document).ready(function() {
     locations.shift();
     locations.push(city);
 
-    //sth wrong here about locations array
-    // local storage issue
     localStorage.setItem("history", JSON.stringify(locations));
 
     displayData(city);
