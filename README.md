@@ -35,7 +35,9 @@ THEN I am again presented with current and future conditions for that city
 
 ## Log
 
-v0.9 23/03/20 initial release
+v0.9 23/03/20 initial release\
 v1.0 24/03/20 deployed
 
 ## To do
+
+1. enter key trigger add city event
