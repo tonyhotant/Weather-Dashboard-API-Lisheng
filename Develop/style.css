@@ -57,3 +57,9 @@ h1 {
 .cardDt {
     font-size: larger;
 }
+
+#uv {
+    color: lightgray;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+}
