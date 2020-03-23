@@ -7,6 +7,29 @@ $(document).ready(function() {
 
   init();
 
+  function init() {
+    var history = JSON.parse(localStorage.getItem("history"));
+    if (history == null) {
+      var history = [
+        "Austin",
+        "Chicago",
+        "New York",
+        "Orlando",
+        "San Francisco",
+        "Seattle",
+        "Denver",
+        "Atlanta"
+      ];
+    }
+    var locations = history;
+    localStorage.setItem("history", JSON.stringify(locations));
+    for (i = 0; i < locations.length; i++) {
+      $("#city-" + i).text(locations[i]);
+    }
+
+    displayData(locations[0]);
+  }
+
   $("#button-view").on("click", function(event) {
     event.preventDefault();
     var city = event.target.innerHTML;
@@ -18,7 +41,7 @@ $(document).ready(function() {
     var city = $("#user-input").val();
     if (city == "" || locations.includes(city)) {
       return;
-    }
+    } //need handle when city not found
 
     var newCity = $("<button>");
     newCity.addClass("list-group-item list-group-item-action").text(city);
@@ -28,32 +51,13 @@ $(document).ready(function() {
       .remove();
     locations.shift();
     locations.push(city);
+
+    //sth wrong here about locations array
+    // local storage issue
     localStorage.setItem("history", JSON.stringify(locations));
 
     displayData(city);
   });
-
-  function init() {
-    var history = JSON.parse(localStorage.getItem("history"));
-    if (history == null) {
-      history = [
-        "Austin",
-        "Chicago",
-        "New York",
-        "Orlando",
-        "San Francisco",
-        "Seattle",
-        "Denver",
-        "Atlanta"
-      ];
-    } else {
-      locations = history;
-      for (i = 0; i < locations.length; i++) {
-        $("#city-" + i).text(locations[i]);
-      }
-    }
-    displayData(locations[0]);
-  }
 
   function displayData(city) {
     var queryURL =
