@@ -86,7 +86,7 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       var iconCode = response.weather[0].icon;
-      var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
+      var iconURL = "https://openweathermap.org/img/w/" + iconCode + ".png";
       $("#city").text(response.name + "(" + date + ")");
       $("#icon").attr("src", iconURL);
       $("#temp").text(response.main.temp);
@@ -97,7 +97,7 @@ $(document).ready(function() {
       var lat = response.coord.lat;
       var lon = response.coord.lon;
       var uvURL =
-        "http://api.openweathermap.org/data/2.5/uvi?appid=" +
+        "https://api.openweathermap.org/data/2.5/uvi?appid=" +
         apiKey +
         "&lat=" +
         lat +
@@ -146,7 +146,7 @@ $(document).ready(function() {
           })
           .indexOf(forecastDt + " 09:00:00");
         var iconCode = response.list[index].weather[0].icon;
-        var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
+        var iconURL = "https://openweathermap.org/img/w/" + iconCode + ".png";
         $("#date-" + i).text(
           moment()
             .add(i, "days")
