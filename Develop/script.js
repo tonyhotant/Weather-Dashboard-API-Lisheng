@@ -1,8 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var apiKey = "b9cd52a37f4e83dc74f86603a4adc81a";
 
   var date = moment().format("L");
 
+  //default city array
   var locations = [
     "Austin",
     "Chicago",
@@ -11,42 +12,45 @@ $(document).ready(function() {
     "San Francisco",
     "Seattle",
     "Denver",
-    "Atlanta"
+    "Atlanta",
   ];
 
   init();
 
   function init() {
     var history = JSON.parse(localStorage.getItem("history"));
+    //handle first time load page
     if (history == null) {
       localStorage.setItem("history", JSON.stringify(locations));
       for (i = 0; i < locations.length; i++) {
         $("#city-" + i).text(locations[i]);
       }
-    } //handle first time load page
+    }
 
     locations = history;
     for (i = 0; i < locations.length; i++) {
       $("#city-" + i).text(locations[i]);
     }
 
+    //read the first city in array as default
     var index = JSON.parse(localStorage.getItem("locationIndex"));
     if (index == -1) {
       index = 0;
       localStorage.setItem("locationIndex", JSON.stringify(index));
-    } //read the first city in array as default
-
+    }
     displayData(locations[index]);
   }
 
-  $("#button-view").on("click", function(event) {
+  $("#button-view").on("click", function (event) {
+    //populate ciy name to button list
     event.preventDefault();
     var city = event.target.innerHTML;
     displayData(city);
   });
 
-  $("#search-btn").on("click", function() {
+  $("#search-btn").on("click", function () {
     var city = $("#user-input").val();
+
     if (city == "" || locations.includes(city)) {
       return;
     }
@@ -58,17 +62,17 @@ $(document).ready(function() {
 
     $.ajax({
       url: queryURL,
-      method: "GET"
-    }).then(function() {
+      method: "GET",
+    }).then(function () {
+      //create new html element
       var newCity = $("<button>");
       newCity.addClass("list-group-item list-group-item-action").text(city);
       $("#button-view").append(newCity);
-      $(".list-group-item")
-        .first()
-        .remove();
+      //add new city to button list, update localstorage
+      $(".list-group-item").first().remove();
       locations.shift();
       locations.push(city);
-      localStorage.setItem("history", JSON.stringify(locations)); //add new city to button, update localstorage
+      localStorage.setItem("history", JSON.stringify(locations));
 
       displayData(city);
     });
@@ -83,8 +87,9 @@ $(document).ready(function() {
 
     $.ajax({
       url: queryURL,
-      method: "GET"
-    }).then(function(response) {
+      method: "GET",
+    }).then(function (response) {
+      //get temp info from ajax request
       var iconCode = response.weather[0].icon;
       var iconURL = "https://openweathermap.org/img/w/" + iconCode + ".png";
       $("#city").text(response.name + "(" + date + ")");
@@ -106,8 +111,8 @@ $(document).ready(function() {
 
       $.ajax({
         url: uvURL,
-        method: "GET"
-      }).then(function(response) {
+        method: "GET",
+      }).then(function (response) {
         $("#uv").text(response.value);
         var uvIndex = response.value;
         if (0 < uvIndex && uvIndex < 2) {
@@ -133,25 +138,18 @@ $(document).ready(function() {
 
     $.ajax({
       url: forecastURL,
-      method: "GET"
-    }).then(function(response) {
+      method: "GET",
+    }).then(function (response) {
       for (i = 1; i < 6; i++) {
-        var forecastDt = moment()
-          .add(i, "days")
-          .format()
-          .slice(0, 10);
+        var forecastDt = moment().add(i, "days").format().slice(0, 10);
         var index = response.list
-          .map(function(e) {
+          .map(function (e) {
             return e.dt_txt;
           })
           .indexOf(forecastDt + " 09:00:00");
         var iconCode = response.list[index].weather[0].icon;
         var iconURL = "https://openweathermap.org/img/w/" + iconCode + ".png";
-        $("#date-" + i).text(
-          moment()
-            .add(i, "days")
-            .format("L")
-        );
+        $("#date-" + i).text(moment().add(i, "days").format("L"));
         $("#icon-" + i).attr("src", iconURL);
         $("#temp-" + i).text(response.list[index].main.temp);
         $("#rh-" + i).text(response.list[index].main.humidity);
